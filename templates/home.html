@@ -4,7 +4,7 @@
 {% block content %}
 
 <!-- HERO = 2 cartes (1ère + 3ème) à la place de la grande photo -->
-<div class="hero hero-maps-only mb-4">
+<div class="hero hero-maps-only mb-4 reveal">
   <div class="hero-maps-only-grid">
     {% if cartes_urls and cartes_urls|length >= 1 %}
       <div class="hero-map-big">
@@ -19,16 +19,31 @@
   </div>
 </div>
 
-<div class="panel p-4 mb-4">
+<div class="panel p-4 mb-4 reveal">
   <div class="fw-bold" style="font-size:20px;">{{ tr('home_intro_title') }}</div>
-  <div class="mt-2">
+  <div class="mt-2 long-text home-intro-text">
     {{ tr('home_intro_text') }}
+  </div>
+
+  <div class="home-features mt-3">
+    <div class="home-feature">
+      <div class="home-feature-title">{{ tr('home_feat_1_t') }}</div>
+      <div class="home-feature-sub">{{ tr('home_feat_1_s') }}</div>
+    </div>
+    <div class="home-feature">
+      <div class="home-feature-title">{{ tr('home_feat_2_t') }}</div>
+      <div class="home-feature-sub">{{ tr('home_feat_2_s') }}</div>
+    </div>
+    <div class="home-feature">
+      <div class="home-feature-title">{{ tr('home_feat_3_t') }}</div>
+      <div class="home-feature-sub">{{ tr('home_feat_3_s') }}</div>
+    </div>
   </div>
 </div>
 
-<div class="section-title mb-3">{{ tr('home_title') }}</div>
+<div class="section-title mb-3 reveal">{{ tr('home_title') }}</div>
 
-<div class="home-grid">
+<div class="home-grid reveal">
   {% for r in regions %}
     <a href="{{ url_for('region', slug=r.slug) }}" class="home-card">
       {% if r.carousel and r.carousel|length > 0 %}
@@ -49,6 +64,14 @@
       </div>
     </a>
   {% endfor %}
+
+  <div class="home-card home-card-static">
+    <img src="{{ url_for('static', filename='cartes/PHOTO-2026-02-08-22-43-41 3.jpg') }}" class="home-card-img" alt="Carte Souss" loading="lazy">
+    <div class="home-card-overlay">
+      <div class="home-card-title">{{ tr('home_map_title') }}</div>
+      <div class="home-card-meta">{{ tr('home_map_sub') }}</div>
+    </div>
+  </div>
 </div>
 
 <!-- CTA en bas à droite -->

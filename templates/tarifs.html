@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% set title = "{{ tr('tarifs_title') }}" %}
+{% set title = tr('tarifs_title') %}
 
 {% block content %}
 
@@ -19,8 +19,8 @@
   <div class="panel p-3 mb-3">
     <div class="fw-bold" style="font-size:18px;">{{ cat.name }}</div>
     <div class="table-responsive mt-2">
-      <table class="table align-middle mb-0">
-        <thead>
+      <table class="table align-middle mb-0 tarifs-table">
+        <thead class="tarifs-thead">
           <tr>
             <th>{{ tr('t_exp') }}</th>
             <th>{{ tr('t_duree') }}</th>
@@ -32,8 +32,8 @@
           {% for t in cat.rows %}
             <tr>
               <td class="fw-bold">{{ t.titre }}</td>
-              <td>{{ t.duree }}</td>
-              <td class="fw-bold">{{ t.prix }}</td>
+              <td class="tarifs-nowrap">{{ t.duree }}</td>
+              <td class="fw-bold tarifs-nowrap">{{ t.prix }}</td>
               <td class="small-muted">{{ t.details }}</td>
             </tr>
           {% endfor %}
