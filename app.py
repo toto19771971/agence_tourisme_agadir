@@ -11,28 +11,200 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "bookings.db")
 
 SUPPORTED_LANGS = ["fr", "en", "de"]
 
-UI = {'fr': {'nav_home': 'Accueil', 'nav_contact': 'Contact / Réservation', 'nav_tarifs': 'Nos tarifs', 'cta_contact': 'Contact / Réservation', 'cta_tarifs': 'Nos tarifs', 'home_title': 'Nos 11 régions en images', 'home_intro_title': 'Bienvenue au Sud du Maroc', 'home_intro_text': """Bienvenue dans le Souss, au Sud du Maroc : un territoire où l’océan Atlantique rencontre les montagnes de l’Anti‑Atlas, des vallées vertes, et les premières portes du désert.
+UI = {
+    'fr': {
+        'nav_home': 'Accueil',
+        'nav_contact': 'Contact / Réservation',
+        'nav_tarifs': 'Nos tarifs',
+        'cta_contact': 'Contact / Réservation',
+        'cta_tarifs': 'Nos tarifs',
+        'home_title': 'Nos 11 régions en images',
+        'home_intro_title': 'Bienvenue au Sud du Maroc',
+        'home_intro_text': """Bienvenue dans le Souss, au Sud du Maroc : un territoire où l’océan Atlantique rencontre les montagnes de l’Anti-Atlas, des vallées vertes, et les premières portes du désert.
 
-Depuis Agadir, vous pouvez tout faire sans courir : respirer l’air marin au petit matin, prendre une route panoramique l’après‑midi, puis savourer une cuisine simple et généreuse le soir — poissons grillés, tajines, amlou, miel, huile d’argan… Ici, chaque sortie change d’ambiance : surf et plages à Taghazout, piscines naturelles à la Vallée du Paradis, villages amazighs et roches roses vers Tafraout, argent et artisanat à Tiznit, falaises rouges et arches sur la côte de Legzira, dunes au bord de l’océan à Timlalin, fraîcheur et cascades du côté d’Imouzzer.
+Depuis Agadir, vous pouvez tout faire sans courir : respirer l’air marin au petit matin, prendre une route panoramique l’après-midi, puis savourer une cuisine simple et généreuse le soir — poissons grillés, tajines, amlou, miel, huile d’argan… Ici, chaque sortie change d’ambiance : surf et plages à Taghazout, piscines naturelles à la Vallée du Paradis, villages amazighs et roches roses vers Tafraout, argent et artisanat à Tiznit, falaises rouges et arches sur la côte de Legzira, dunes au bord de l’océan à Timlalin, fraîcheur et cascades du côté d’Imouzzer.
 
 Notre promesse : des excursions bien organisées, un rythme agréable, des lieux photogéniques, et surtout une expérience humaine. Vous ne “consommez” pas une activité : vous vivez un Sud marocain authentique — paysages, histoire, rencontres, et souvenirs.
 
-Choisissez une région ci‑dessous : chaque carte ouvre une atmosphère différente. Et si vous hésitez, contactez‑nous : nous vous conseillons selon votre temps, votre budget et vos envies.
-""", 'home_feat_1_t': 'Excursions', 'home_feat_1_s': 'Des sorties organisées, confortables et simples.', 'home_feat_2_t': 'Découverte', 'home_feat_2_s': 'Océan, montagnes, villages, oasis, désert : tout proche.', 'home_feat_3_t': 'Souvenirs', 'home_feat_3_s': 'Photos, paysages, rencontres : une journée qui reste.', 'home_map_title': 'Carte de la région', 'home_map_sub': 'Repérez nos points de départ et nos zones d’excursion.', 'region_about': 'À propos de cette région', 'region_photos': 'Photos', 'reserve': 'Contact / Réservation', 'back': 'Retour', 'contact_title': 'Contact / Réservation', 'contact_sub': 'Dites-nous ce que vous souhaitez faire, nous vous répondons rapidement.', 'f_name': 'Nom', 'f_email': 'Email', 'f_phone': 'Téléphone', 'f_region': 'Région', 'f_date_from': 'Date (du)', 'f_date_to': 'Date (au)', 'f_people': 'Nombre de personnes', 'f_activities': 'Activités souhaitées', 'f_message': 'Message', 'f_message_ph': 'Décrivez ce que vous souhaitez faire (durée, niveau, préférences)', 'send': 'Envoyer', 'sent_ok': 'Message envoyé', 'sent_ok_sub': 'Merci. Nous vous recontactons rapidement.', 'payment': 'Paiement', 'payment_note': 'Paiement en ligne disponible bientôt. Vous pouvez déjà réserver par message.', 'pay_paypal': 'Paiement PayPal (bientôt)', 'tarifs_title': 'Nos tarifs', 'tarifs_sub': 'Prix indicatifs. Contactez-nous pour un devis selon votre groupe et la saison.', 't_exp': 'Expérience', 't_duree': 'Durée', 't_prix': 'Prix', 't_details': 'Détails', 'footer_contact': 'Adresse : Nehda Lkobra double voie · Téléphone : +41 79 558 15 41 · E‑mail : robot.comptable@gmail.com · WhatsApp : +41 79 558 15 41'}, 'en': {'nav_home': 'Home', 'nav_contact': 'Contact / Booking', 'nav_tarifs': 'Prices', 'cta_contact': 'Contact / Booking', 'cta_tarifs': 'Prices', 'home_title': 'Our 11 regions in pictures', 'home_intro_title': 'Welcome to Southern Morocco', 'home_intro_text': """Welcome to the Souss, in Southern Morocco: a land where the Atlantic Ocean meets the Anti‑Atlas mountains, green valleys, and the first gateways to the desert.
+Choisissez une région ci-dessous : chaque carte ouvre une atmosphère différente. Et si vous hésitez, contactez-nous : nous vous conseillons selon votre temps, votre budget et vos envies.
+""",
+        'home_feat_1_t': 'Excursions',
+        'home_feat_1_s': 'Des sorties organisées, confortables et simples.',
+        'home_feat_2_t': 'Découverte',
+        'home_feat_2_s': 'Océan, montagnes, villages, oasis, désert : tout proche.',
+        'home_feat_3_t': 'Souvenirs',
+        'home_feat_3_s': 'Photos, paysages, rencontres : une journée qui reste.',
+        'home_map_title': 'Carte de la région',
+        'home_map_sub': 'Repérez nos points de départ et nos zones d’excursion.',
+        'region_about': 'À propos de cette région',
+        'region_photos': 'Photos',
+        'reserve': 'Contact / Réservation',
+        'back': 'Retour',
+        'contact_title': 'Contact / Réservation',
+        'contact_sub': 'Dites-nous ce que vous souhaitez faire, nous vous répondons rapidement.',
+        'f_name': 'Nom',
+        'f_email': 'Email',
+        'f_phone': 'Téléphone',
+        'f_region': 'Région',
+        'f_date_from': 'Date (du)',
+        'f_date_to': 'Date (au)',
+        'f_people': 'Nombre de personnes',
+        'f_activities': 'Activités souhaitées',
+        'f_message': 'Message',
+        'f_message_ph': 'Décrivez ce que vous souhaitez faire (durée, niveau, préférences)',
 
-From Agadir, you can explore without rushing: ocean air in the morning, scenic roads in the afternoon, and generous local food in the evening — grilled fish, tagines, amlou, honey, argan oil… Each outing brings a different mood: surf beaches in Taghazout, natural pools in Paradise Valley, Amazigh villages and pink granite around Tafraout, silver craft and heritage in Tiznit, red cliffs and coastal arches near Legzira, ocean‑side dunes at Timlalin, and fresh mountain scenery around Immouzzar.
+        'act_horse': 'Balade à cheval',
+        'act_camel': 'Chameau / désert',
+        'act_quad': 'Quad / buggy',
+        'act_jetski': 'Jet-ski',
+        'act_cooking': 'Cours de cuisine',
+        'act_heritage': 'Patrimoine / visites',
+        'act_hike': 'Randonnée',
+        'act_other': 'Autre',
 
-Our promise: well‑organized trips, a comfortable pace, photogenic spots, and above all a warm human experience. You don’t just “book an activity” — you live an authentic Southern Morocco: landscapes, history, encounters, and lasting memories.
+        'send': 'Envoyer',
+        'sent_ok': 'Message envoyé',
+        'sent_ok_sub': 'Merci. Nous vous recontactons rapidement.',
+        'payment': 'Paiement',
+        'payment_note': 'Paiement en ligne disponible bientôt. Vous pouvez déjà réserver par message.',
+        'pay_paypal': 'Paiement PayPal (bientôt)',
+        'tarifs_title': 'Nos tarifs',
+        'tarifs_sub': 'Prix indicatifs. Contactez-nous pour un devis selon votre groupe et la saison.',
+        't_exp': 'Expérience',
+        't_duree': 'Durée',
+        't_prix': 'Prix',
+        't_details': 'Détails',
+        'footer_contact': 'Adresse : Nehda Lkobra double voie · Téléphone : +41 79 558 15 41 · E-mail : robot.comptable@gmail.com · WhatsApp : +41 79 558 15 41'
+    },
+    'en': {
+        'nav_home': 'Home',
+        'nav_contact': 'Contact / Booking',
+        'nav_tarifs': 'Prices',
+        'cta_contact': 'Contact / Booking',
+        'cta_tarifs': 'Prices',
+        'home_title': 'Our 11 regions in pictures',
+        'home_intro_title': 'Welcome to Southern Morocco',
+        'home_intro_text': """Welcome to the Souss, in Southern Morocco: a land where the Atlantic Ocean meets the Anti-Atlas mountains, green valleys, and the first gateways to the desert.
+
+From Agadir, you can explore without rushing: ocean air in the morning, scenic roads in the afternoon, and generous local food in the evening — grilled fish, tagines, amlou, honey, argan oil… Each outing brings a different mood: surf beaches in Taghazout, natural pools in Paradise Valley, Amazigh villages and pink granite around Tafraout, silver craft and heritage in Tiznit, red cliffs and coastal arches near Legzira, ocean-side dunes at Timlalin, and fresh mountain scenery around Immouzzar.
+
+Our promise: well-organized trips, a comfortable pace, photogenic spots, and above all a warm human experience. You don’t just “book an activity” — you live an authentic Southern Morocco: landscapes, history, encounters, and lasting memories.
 
 Pick a region below: each card opens a new atmosphere. And if you are not sure, contact us — we will recommend the best plan for your time, budget, and interests.
-""", 'home_feat_1_t': 'Trips', 'home_feat_1_s': 'Well organized, comfortable, and easy.', 'home_feat_2_t': 'Discover', 'home_feat_2_s': 'Ocean, mountains, villages, oases, desert — all nearby.', 'home_feat_3_t': 'Memories', 'home_feat_3_s': 'Photos, landscapes, encounters — a day you remember.', 'home_map_title': 'Regional map', 'home_map_sub': 'Find our departure points and excursion areas.', 'region_about': 'About this region', 'region_photos': 'Photos', 'reserve': 'Contact / Booking', 'back': 'Back', 'contact_title': 'Contact / Booking', 'contact_sub': 'Tell us what you would like to do — we reply quickly.', 'f_name': 'Name', 'f_email': 'Email', 'f_phone': 'Phone', 'f_region': 'Region', 'f_date_from': 'Date (from)', 'f_date_to': 'Date (to)', 'f_people': 'People', 'f_activities': 'Activities', 'f_message': 'Message', 'f_message_ph': 'Describe what you would like to do (duration, level, preferences)', 'send': 'Send', 'sent_ok': 'Message sent', 'sent_ok_sub': 'Thank you. We will contact you shortly.', 'payment': 'Payment', 'payment_note': 'Online payment coming soon. You can already book by message.', 'pay_paypal': 'PayPal payment (soon)', 'tarifs_title': 'Prices', 'tarifs_sub': 'Indicative prices. Contact us for a quote depending on group size and season.', 't_exp': 'Experience', 't_duree': 'Duration', 't_prix': 'Price', 't_details': 'Details', 'footer_contact': 'Address: Nehda Lkobra double voie · Phone: +41 79 558 15 41 · Email: robot.comptable@gmail.com · WhatsApp: +41 79 558 15 41'}, 'de': {'nav_home': 'Startseite', 'nav_contact': 'Kontakt / Reservierung', 'nav_tarifs': 'Preise', 'cta_contact': 'Kontakt / Reservierung', 'cta_tarifs': 'Preise', 'home_title': 'Unsere 11 Regionen in Bildern', 'home_intro_title': 'Willkommen im Süden Marokkos', 'home_intro_text': """Willkommen im Souss, im Süden Marokkos: eine Region, in der der Atlantik auf das Anti‑Atlas‑Gebirge trifft, wo grüne Täler, Oasen und die ersten Tore zur Wüste beginnen.
+""",
+        'home_feat_1_t': 'Trips',
+        'home_feat_1_s': 'Well organized, comfortable, and easy.',
+        'home_feat_2_t': 'Discover',
+        'home_feat_2_s': 'Ocean, mountains, villages, oases, desert — all nearby.',
+        'home_feat_3_t': 'Memories',
+        'home_feat_3_s': 'Photos, landscapes, encounters — a day you remember.',
+        'home_map_title': 'Regional map',
+        'home_map_sub': 'Find our departure points and excursion areas.',
+        'region_about': 'About this region',
+        'region_photos': 'Photos',
+        'reserve': 'Contact / Booking',
+        'back': 'Back',
+        'contact_title': 'Contact / Booking',
+        'contact_sub': 'Tell us what you would like to do — we reply quickly.',
+        'f_name': 'Name',
+        'f_email': 'Email',
+        'f_phone': 'Phone',
+        'f_region': 'Region',
+        'f_date_from': 'Date (from)',
+        'f_date_to': 'Date (to)',
+        'f_people': 'People',
+        'f_activities': 'Activities',
+        'f_message': 'Message',
+        'f_message_ph': 'Describe what you would like to do (duration, level, preferences)',
 
-Von Agadir aus können Sie entspannt entdecken: Meeresluft am Morgen, Panoramastraßen am Nachmittag und abends eine ehrliche, großzügige Küche — gegrillter Fisch, Tajine, Amlou, Honig, Arganöl… Jede Ausfahrt hat eine andere Stimmung: Surfstrände in Taghazout, Naturbecken im Paradise Valley, Amazigh‑Dörfer und rosafarbener Granit rund um Tafraout, Silberhandwerk und Traditionen in Tiznit, rote Klippen und Küstenbögen bei Legzira, Dünen direkt am Ozean in Timlalin sowie frische Berglandschaften in der Gegend von Immouzzar.
+        'act_horse': 'Horse ride',
+        'act_camel': 'Camel / desert',
+        'act_quad': 'Quad / buggy',
+        'act_jetski': 'Jet ski',
+        'act_cooking': 'Cooking class',
+        'act_heritage': 'Heritage / sightseeing',
+        'act_hike': 'Hiking',
+        'act_other': 'Other',
+
+        'send': 'Send',
+        'sent_ok': 'Message sent',
+        'sent_ok_sub': 'Thank you. We will contact you shortly.',
+        'payment': 'Payment',
+        'payment_note': 'Online payment coming soon. You can already book by message.',
+        'pay_paypal': 'PayPal payment (soon)',
+        'tarifs_title': 'Prices',
+        'tarifs_sub': 'Indicative prices. Contact us for a quote depending on group size and season.',
+        't_exp': 'Experience',
+        't_duree': 'Duration',
+        't_prix': 'Price',
+        't_details': 'Details',
+        'footer_contact': 'Address: Nehda Lkobra double voie · Phone: +41 79 558 15 41 · Email: robot.comptable@gmail.com · WhatsApp: +41 79 558 15 41'
+    },
+    'de': {
+        'nav_home': 'Startseite',
+        'nav_contact': 'Kontakt / Reservierung',
+        'nav_tarifs': 'Preise',
+        'cta_contact': 'Kontakt / Reservierung',
+        'cta_tarifs': 'Preise',
+        'home_title': 'Unsere 11 Regionen in Bildern',
+        'home_intro_title': 'Willkommen im Süden Marokkos',
+        'home_intro_text': """Willkommen im Souss, im Süden Marokkos: eine Region, in der der Atlantik auf das Anti-Atlas-Gebirge trifft, wo grüne Täler, Oasen und die ersten Tore zur Wüste beginnen.
+
+Von Agadir aus können Sie entspannt entdecken: Meeresluft am Morgen, Panoramastraßen am Nachmittag und abends eine ehrliche, großzügige Küche — gegrillter Fisch, Tajine, Amlou, Honig, Arganöl… Jede Ausfahrt hat eine andere Stimmung: Surfstrände in Taghazout, Naturbecken im Paradise Valley, Amazigh-Dörfer und rosafarbener Granit rund um Tafraout, Silberhandwerk und Traditionen in Tiznit, rote Klippen und Küstenbögen bei Legzira, Dünen direkt am Ozean in Timlalin sowie frische Berglandschaften in der Gegend von Immouzzar.
 
 Unser Versprechen: gut organisierte Ausflüge, ein angenehmes Tempo, sehr fotogene Orte und vor allem ein menschliches Erlebnis. Sie „buchen“ nicht einfach eine Aktivität — Sie erleben den authentischen Süden Marokkos: Landschaften, Geschichte, Begegnungen und Erinnerungen.
 
 Wählen Sie unten eine Region: Jede Karte öffnet eine neue Atmosphäre. Und wenn Sie unsicher sind, kontaktieren Sie uns — wir empfehlen Ihnen gerne die beste Route je nach Zeit, Budget und Ihren Wünschen.
-""", 'home_feat_1_t': 'Ausflüge', 'home_feat_1_s': 'Gut organisiert, bequem und unkompliziert.', 'home_feat_2_t': 'Entdecken', 'home_feat_2_s': 'Ozean, Berge, Dörfer, Oasen, Wüste — alles in der Nähe.', 'home_feat_3_t': 'Erinnerungen', 'home_feat_3_s': 'Fotos, Landschaften, Begegnungen — ein Tag, der bleibt.', 'home_map_title': 'Regionalkarte', 'home_map_sub': 'Finden Sie unsere Startpunkte und Ausflugsgebiete.', 'region_about': 'Über diese Region', 'region_photos': 'Fotos', 'reserve': 'Kontakt / Reservierung', 'back': 'Zurück', 'contact_title': 'Kontakt / Reservierung', 'contact_sub': 'Sagen Sie uns, was Sie machen möchten — wir antworten schnell.', 'f_name': 'Name', 'f_email': 'E‑Mail', 'f_phone': 'Telefon', 'f_region': 'Region', 'f_date_from': 'Datum (von)', 'f_date_to': 'Datum (bis)', 'f_people': 'Personen', 'f_activities': 'Aktivitäten', 'f_message': 'Nachricht', 'f_message_ph': 'Beschreiben Sie, was Sie machen möchten (Dauer, Niveau, Wünsche)', 'send': 'Senden', 'sent_ok': 'Nachricht gesendet', 'sent_ok_sub': 'Vielen Dank. Wir melden uns schnell.', 'payment': 'Zahlung', 'payment_note': 'Online‑Zahlung kommt bald. Sie können bereits per Nachricht reservieren.', 'pay_paypal': 'PayPal‑Zahlung (bald)', 'tarifs_title': 'Preise', 'tarifs_sub': 'Unverbindliche Preise. Kontaktieren Sie uns für ein Angebot je nach Gruppe und Saison.', 't_exp': 'Erlebnis', 't_duree': 'Dauer', 't_prix': 'Preis', 't_details': 'Details', 'footer_contact': 'Adresse: Nehda Lkobra double voie · Telefon: +41 79 558 15 41 · E‑Mail: robot.comptable@gmail.com · WhatsApp: +41 79 558 15 41'}}
+""",
+        'home_feat_1_t': 'Ausflüge',
+        'home_feat_1_s': 'Gut organisiert, bequem und unkompliziert.',
+        'home_feat_2_t': 'Entdecken',
+        'home_feat_2_s': 'Ozean, Berge, Dörfer, Oasen, Wüste — alles in der Nähe.',
+        'home_feat_3_t': 'Erinnerungen',
+        'home_feat_3_s': 'Fotos, Landschaften, Begegnungen — ein Tag, der bleibt.',
+        'home_map_title': 'Regionalkarte',
+        'home_map_sub': 'Finden Sie unsere Startpunkte und Ausflugsgebiete.',
+        'region_about': 'Über diese Region',
+        'region_photos': 'Fotos',
+        'reserve': 'Kontakt / Reservierung',
+        'back': 'Zurück',
+        'contact_title': 'Kontakt / Reservierung',
+        'contact_sub': 'Sagen Sie uns, was Sie machen möchten — wir antworten schnell.',
+        'f_name': 'Name',
+        'f_email': 'E-Mail',
+        'f_phone': 'Telefon',
+        'f_region': 'Region',
+        'f_date_from': 'Datum (von)',
+        'f_date_to': 'Datum (bis)',
+        'f_people': 'Personen',
+        'f_activities': 'Aktivitäten',
+        'f_message': 'Nachricht',
+        'f_message_ph': 'Beschreiben Sie, was Sie machen möchten (Dauer, Niveau, Wünsche)',
+
+        'act_horse': 'Ausritt (Pferd)',
+        'act_camel': 'Kamel / Wüste',
+        'act_quad': 'Quad / Buggy',
+        'act_jetski': 'Jet-Ski',
+        'act_cooking': 'Kochkurs',
+        'act_heritage': 'Kultur / Besichtigungen',
+        'act_hike': 'Wanderung',
+        'act_other': 'Sonstiges',
+
+        'send': 'Senden',
+        'sent_ok': 'Nachricht gesendet',
+        'sent_ok_sub': 'Vielen Dank. Wir melden uns schnell.',
+        'payment': 'Zahlung',
+        'payment_note': 'Online-Zahlung kommt bald. Sie können bereits per Nachricht reservieren.',
+        'pay_paypal': 'PayPal-Zahlung (bald)',
+        'tarifs_title': 'Preise',
+        'tarifs_sub': 'Unverbindliche Preise. Kontaktieren Sie uns für ein Angebot je nach Gruppe und Saison.',
+        't_exp': 'Erlebnis',
+        't_duree': 'Dauer',
+        't_prix': 'Preis',
+        't_details': 'Details',
+        'footer_contact': 'Adresse: Nehda Lkobra double voie · Telefon: +41 79 558 15 41 · E-Mail: robot.comptable@gmail.com · WhatsApp: +41 79 558 15 41'
+    }
+}
 
 REGION_TEXTS = {'fr': {'agadir': """Agadir est la porte d’entrée idéale pour découvrir le Sud : une grande baie lumineuse, une promenade en bord de mer, et une ville tournée vers l’Atlantique. Depuis la Kasbah (Oufella), la vue embrasse le port, la plage et les montagnes au loin. La ville porte aussi une histoire forte : après le séisme de 1960, elle a été reconstruite et modernisée.
 
@@ -49,12 +221,12 @@ C’est une sortie parfaite si vous voulez mélanger mer, photo, et détente, sa
 Sur place, vous pouvez suivre un sentier accessible, faire des pauses près de l’eau, et, selon la météo et le niveau des bassins, vous baigner dans les “piscines naturelles”. Le contraste est saisissant : roches, verdure, eau claire, et vues sur l’Atlas.
 
 Conseil : en excursion, tout devient plus simple (route, timing, meilleurs points). L’objectif est de profiter sans se presser : nature, photo, et détente.
-""", 'cascade_immouzzar': """Imouzzer et ses environs offrent une parenthèse de fraîcheur dans l’arrière‑pays : routes de montagne, petites vallées, et un décor plus “vert” selon la saison. Historiquement, la zone est connue pour ses paysages et pour la fameuse “route du miel”, appréciée pour les produits locaux.
+""", 'cascade_immouzzar': """Imouzzer et ses environs offrent une parenthèse de fraîcheur dans l’arrière-pays : routes de montagne, petites vallées, et un décor plus “vert” selon la saison. Historiquement, la zone est connue pour ses paysages et pour la fameuse “route du miel”, appréciée pour les produits locaux.
 
 Selon la période de l’année, vous pourrez voir des points d’eau et des zones plus humides, faire des pauses dans des cafés de montagne, et découvrir des villages où le rythme est très différent de la côte. C’est une sortie agréable si vous cherchez l’air frais et un Maroc plus rural.
 
-L’intérêt est autant dans la balade panoramique que dans l’arrivée : l’arrière‑pays du Souss réserve souvent de belles surprises.
-""", 'tafraout': """Tafraout, au cœur de l’Anti‑Atlas, est célèbre pour ses montagnes de granit rose, ses formations rocheuses et ses villages amazighs. La lumière y est particulière : au lever et au coucher du soleil, les reliefs prennent des teintes chaudes incroyables, parfaites pour la photo.
+L’intérêt est autant dans la balade panoramique que dans l’arrivée : l’arrière-pays du Souss réserve souvent de belles surprises.
+""", 'tafraout': """Tafraout, au cœur de l’Anti-Atlas, est célèbre pour ses montagnes de granit rose, ses formations rocheuses et ses villages amazighs. La lumière y est particulière : au lever et au coucher du soleil, les reliefs prennent des teintes chaudes incroyables, parfaites pour la photo.
 
 La région se découvre par étapes : points de vue, petits villages, palmeraies, et vallées comme celle des Ammeln. On peut aussi aller vers des gorges et des oasis cachées, où la verdure surgit au milieu des roches.
 
@@ -84,7 +256,7 @@ Si vous voulez une journée dépaysante, simple et très visuelle, c’est une e
 On peut y passer la journée entre balade sur les remparts, découverte de la médina, dégustation de poisson au port, et shopping d’artisanat (bois de thuya, produits locaux). C’est aussi un paradis pour la photo.
 
 Essaouira plaît autant aux amoureux d’histoire qu’aux voyageurs qui aiment flâner, manger et se laisser porter.
-""", 'marrakech': """Marrakech est une immersion totale : la médina, ses souks, ses palais, ses jardins et l’énergie unique de la place Jemaa el‑Fna. C’est une ville intense, colorée, où chaque ruelle raconte une histoire.
+""", 'marrakech': """Marrakech est une immersion totale : la médina, ses souks, ses palais, ses jardins et l’énergie unique de la place Jemaa el-Fna. C’est une ville intense, colorée, où chaque ruelle raconte une histoire.
 
 Selon votre rythme, vous pouvez visiter des incontournables (jardins, palais, musées), puis vous perdre dans les souks pour sentir l’ambiance et découvrir l’artisanat. La cuisine et les rooftops au coucher du soleil font aussi partie de l’expérience.
 
@@ -93,12 +265,12 @@ C’est une grande journée, mais si vous voulez voir “l’icône” du Maroc,
 
 It is above all a great base for day trips: local markets, regional products (argan oil, honey, amlou), seafood, and easy routes to Taghazout, Paradise Valley, Immouzzar, Tiznit, Tafraout, coastal dunes, and more. Whether you prefer relaxation, photography, nature, or culture, everything is within reach.
 
-If you want a “no‑stress” day, this is where good organization makes the difference: smooth pick‑up, smart routes, well‑timed stops, and a comfortable pace.
+If you want a “no-stress” day, this is where good organization makes the difference: smooth pick-up, smart routes, well-timed stops, and a comfortable pace.
 """, 'taghazout_village_colore': """Taghazout is a fishing village that became a famous surf spot while keeping its relaxed vibe. Oceanfront cafés, simple streets, and coastal viewpoints make it a perfect place to slow down.
 
 Depending on the season, you can watch surfers, walk at sunset, or explore nearby coves and beaches. The atmosphere is pure seaside — with a small bohemian touch that gives the coast its charm.
 
-It’s an ideal half‑day or day trip if you want to combine ocean views, photos, and easy relaxation.
+It’s an ideal half-day or day trip if you want to combine ocean views, photos, and easy relaxation.
 """, 'vallee_paradis': """Paradise Valley is an oasis in the foothills, known for its palm trees, rocky gorges, and natural pools. People come to walk, breathe fresh air, and enjoy a completely different scenery from Agadir — in less than an hour by road.
 
 On site, you can follow an easy trail, stop near the water, and, depending on conditions, swim in the natural pools. The contrast is striking: stone, greenery, clear water, and mountain views.
@@ -109,7 +281,7 @@ With a guided plan, everything becomes smoother (road, timing, best viewpoints).
 According to the time of year, you may see water spots and cooler corners, stop in small mountain cafés, and discover villages where life feels far from the coastal rhythm. It’s a great option if you want fresh air and a more rural side of Morocco.
 
 The beauty is as much in the panoramic drive as in the destination — the Souss backcountry often surprises visitors.
-""", 'tafraout': """Tafraout, in the heart of the Anti‑Atlas, is famous for its pink granite mountains, rock formations, and Amazigh villages. The light here is special: at sunrise and sunset, the landscape turns warm and dramatic — perfect for photography.
+""", 'tafraout': """Tafraout, in the heart of the Anti-Atlas, is famous for its pink granite mountains, rock formations, and Amazigh villages. The light here is special: at sunrise and sunset, the landscape turns warm and dramatic — perfect for photography.
 
 You discover the area step by step: viewpoints, small villages, palm groves, and valleys such as the Ammeln Valley. Nearby, hidden gorges and oasis pockets reveal greenery in the middle of the rocks.
 
@@ -133,18 +305,18 @@ It’s short, easy, and genuinely impressive — ideal if you want a different s
 
 People come for wide panoramas, strong photos, and the sense of space. With good timing, the light transforms the scenery and makes every stop look cinematic.
 
-If you want a simple, visual, and change‑of‑scene day, it’s an excellent option.
-""", 'essaouira': """Essaouira, farther north on the Atlantic coast, is a city with character: ramparts, a historic medina, white‑and‑blue streets, and a very lively harbor. The atmosphere is different from Agadir — more historic and artistic, with a constant ocean breeze.
+If you want a simple, visual, and change-of-scene day, it’s an excellent option.
+""", 'essaouira': """Essaouira, farther north on the Atlantic coast, is a city with character: ramparts, a historic medina, white-and-blue streets, and a very lively harbor. The atmosphere is different from Agadir — more historic and artistic, with a constant ocean breeze.
 
 You can spend the day walking the walls, exploring the medina, tasting fresh fish at the port, and shopping local crafts (thuya wood, regional products). It’s also a great place for photography.
 
 Essaouira works for travelers who love history, food, and relaxed wandering.
-""", 'marrakech': """Marrakech is a full immersion: the medina, souks, palaces, gardens, and the unique energy of Jemaa el‑Fna square. It’s intense, colorful, and unforgettable.
+""", 'marrakech': """Marrakech is a full immersion: the medina, souks, palaces, gardens, and the unique energy of Jemaa el-Fna square. It’s intense, colorful, and unforgettable.
 
 Depending on your pace, you can visit key landmarks (gardens, palaces, museums) and then get lost in the souks to feel the city’s heartbeat and discover craftsmanship. Rooftops at sunset and Moroccan cuisine are part of the experience.
 
 It’s a big day trip, but if you want to see Morocco’s iconic city, Marrakech is a classic you will never forget.
-"""}, 'de': {'agadir': """Agadir ist der ideale Ausgangspunkt für den Süden: eine helle Bucht, lange Promenaden und eine Stadt im Rhythmus des Atlantiks. Von der Kasbah‑Anh Höhe (Oufella) sehen Sie Hafen, Strand und die Berge in der Ferne. Agadir hat auch eine starke Geschichte — nach dem Erdbeben von 1960 wurde die Stadt neu aufgebaut und modernisiert.
+"""}, 'de': {'agadir': """Agadir ist der ideale Ausgangspunkt für den Süden: eine helle Bucht, lange Promenaden und eine Stadt im Rhythmus des Atlantiks. Von der Kasbah-Anh Höhe (Oufella) sehen Sie Hafen, Strand und die Berge in der Ferne. Agadir hat auch eine starke Geschichte — nach dem Erdbeben von 1960 wurde die Stadt neu aufgebaut und modernisiert.
 
 Vor allem ist Agadir eine perfekte Basis für Tagesausflüge: Märkte, regionale Produkte (Arganöl, Honig, Amlou), frischer Fisch und einfache Routen nach Taghazout, Paradise Valley, Immouzzar, Tiznit, Tafraout, zu den Küstendünen und mehr. Ob Entspannung, Fotografie, Natur oder Kultur — vieles ist schnell erreichbar.
 
@@ -164,9 +336,9 @@ Mit guter Planung läuft alles ruhiger (Straße, Timing, beste Aussichtspunkte).
 Je nach Jahreszeit sehen Sie kühlere Ecken und Wasserstellen, können in kleinen Bergcafés pausieren und Dörfer entdecken, in denen das Leben ganz anders als an der Küste wirkt. Ideal, wenn Sie frische Luft und ein ländlicheres Marokko möchten.
 
 Der Reiz liegt sowohl in der Panoramafahrt als auch im Ziel — das Hinterland des Souss überrascht oft.
-""", 'tafraout': """Tafraout im Anti‑Atlas ist berühmt für rosafarbenen Granit, besondere Felsformen und Amazigh‑Dörfer. Das Licht ist einzigartig: Bei Sonnenauf‑ und ‑untergang wirken die Berge warm und dramatisch — perfekt für Fotos.
+""", 'tafraout': """Tafraout im Anti-Atlas ist berühmt für rosafarbenen Granit, besondere Felsformen und Amazigh-Dörfer. Das Licht ist einzigartig: Bei Sonnenauf- und -untergang wirken die Berge warm und dramatisch — perfekt für Fotos.
 
-Sie entdecken die Region Schritt für Schritt: Aussichtspunkte, kleine Dörfer, Palmenhaine und Täler wie das Ammeln‑Tal. In der Nähe zeigen Schluchten und versteckte Oasen plötzlich Grün mitten im Fels.
+Sie entdecken die Region Schritt für Schritt: Aussichtspunkte, kleine Dörfer, Palmenhaine und Täler wie das Ammeln-Tal. In der Nähe zeigen Schluchten und versteckte Oasen plötzlich Grün mitten im Fels.
 
 Wenn Sie Postkartenlandschaften und eine authentische Atmosphäre lieben, ist Tafraout ein Muss.
 """, 'tiznit': """Tiznit ist eine traditionelle Stadt, bekannt für ihre Stadtmauern und ihr Handwerk — vor allem Silberschmuck und Kunsthandwerk. Ein Spaziergang durch die Medina und die Souks wirkt ruhiger und lokaler: Hier nimmt man sich Zeit.
@@ -189,12 +361,12 @@ Kurz, leicht und wirklich beeindruckend — perfekt, wenn Sie ohne lange Fahrt e
 Man kommt wegen der Panoramen, der starken Fotos und des Gefühls von Raum. Mit gutem Timing verwandelt das Licht die Szenerie und macht jeden Halt spektakulär.
 
 Wenn Sie einen einfachen, visuellen Tapetenwechsel suchen, ist das eine sehr gute Option.
-""", 'essaouira': """Essaouira an der Atlantikküste ist eine Stadt mit Charakter: Stadtmauern, eine historische Medina, weiß‑blaue Gassen und ein sehr lebendiger Hafen. Die Atmosphäre ist anders als in Agadir — historischer und künstlerischer, mit fast ständigem Wind.
+""", 'essaouira': """Essaouira an der Atlantikküste ist eine Stadt mit Charakter: Stadtmauern, eine historische Medina, weiß-blaue Gassen und ein sehr lebendiger Hafen. Die Atmosphäre ist anders als in Agadir — historischer und künstlerischer, mit fast ständigem Wind.
 
-Sie können den Tag mit einem Spaziergang auf den Mauern, einem Bummel durch die Medina, frischem Fisch am Hafen und Handwerk (Thuya‑Holz, regionale Produkte) füllen. Auch fotografisch ist es ein Traum.
+Sie können den Tag mit einem Spaziergang auf den Mauern, einem Bummel durch die Medina, frischem Fisch am Hafen und Handwerk (Thuya-Holz, regionale Produkte) füllen. Auch fotografisch ist es ein Traum.
 
 Essaouira passt für alle, die Geschichte, Essen und entspanntes Flanieren mögen.
-""", 'marrakech': """Marrakesch ist ein intensives Erlebnis: Medina, Souks, Paläste, Gärten und die einzigartige Energie des Platzes Jemaa el‑Fna. Es ist farbig, lebendig und unvergesslich.
+""", 'marrakech': """Marrakesch ist ein intensives Erlebnis: Medina, Souks, Paläste, Gärten und die einzigartige Energie des Platzes Jemaa el-Fna. Es ist farbig, lebendig und unvergesslich.
 
 Je nach Tempo besuchen Sie wichtige Orte (Gärten, Paläste, Museen) und tauchen dann in die Souks ein, um die Stimmung zu spüren und Handwerk zu entdecken. Rooftops zum Sonnenuntergang und marokkanische Küche gehören dazu.
 

@@ -56,12 +56,13 @@
     <div class="col-12">
       <label class="form-label fw-bold">{{ tr('f_activities') }}</label>
       <div class="d-flex flex-wrap gap-2">
-        {% for a in ["Balade à cheval","Chameau / désert","Quad / buggy","Jet-ski","Cours de cuisine","Patrimoine / visites","Randonnée","Autre"] %}
+        {% for k in ["act_horse","act_camel","act_quad","act_jetski","act_cooking","act_heritage","act_hike","act_other"] %}
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="activites" value="{{ a }}" id="a{{ loop.index }}">
-            <label class="form-check-label" for="a{{ loop.index }}">{{ a }}</label>
+            <input class="form-check-input" type="checkbox" name="activites" value="{{ tr(k) }}" id="a{{ loop.index }}">
+            <label class="form-check-label" for="a{{ loop.index }}">{{ tr(k) }}</label>
           </div>
         {% endfor %}
+
       </div>
     </div>
 
@@ -76,7 +77,6 @@
     </div>
 
     <div class="col-12 small-muted">
-      Paiement : en général, PayPal apparaît au moment du paiement (checkout). Ici, c’est un placeholder.
     </div>
   </form>
 
