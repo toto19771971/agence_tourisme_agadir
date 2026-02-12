@@ -11,6 +11,11 @@ DB_PATH = os.path.join(os.path.dirname(__file__), "bookings.db")
 
 SUPPORTED_LANGS = ["fr", "en", "de"]
 
+DISPLAY_NAME = {
+    "tiznit": "Taroudant",
+    "tafraout": "Tiznit / Tafraout",
+}
+
 UI = {
     'fr': {
         'nav_home': 'Accueil',
@@ -226,17 +231,11 @@ Conseil : en excursion, tout devient plus simple (route, timing, meilleurs point
 Selon la période de l’année, vous pourrez voir des points d’eau et des zones plus humides, faire des pauses dans des cafés de montagne, et découvrir des villages où le rythme est très différent de la côte. C’est une sortie agréable si vous cherchez l’air frais et un Maroc plus rural.
 
 L’intérêt est autant dans la balade panoramique que dans l’arrivée : l’arrière-pays du Souss réserve souvent de belles surprises.
-""", 'tafraout': """Tafraout, au cœur de l’Anti-Atlas, est célèbre pour ses montagnes de granit rose, ses formations rocheuses et ses villages amazighs. La lumière y est particulière : au lever et au coucher du soleil, les reliefs prennent des teintes chaudes incroyables, parfaites pour la photo.
+""", 'tafraout': """Tiznit / Tafraout réunit deux expériences complémentaires du Sud.
 
-La région se découvre par étapes : points de vue, petits villages, palmeraies, et vallées comme celle des Ammeln. On peut aussi aller vers des gorges et des oasis cachées, où la verdure surgit au milieu des roches.
+Tiznit est connue pour ses remparts, sa médina et son artisanat (notamment l’argent). Tafraout, au cœur de l’Anti‑Atlas, offre des montagnes de granit rose, des villages amazighs et des panoramas spectaculaires. Ensemble, c’est une sortie idéale pour combiner culture, shopping local et paysages “carte postale”.""", 'tiznit': """Taroudant, au cœur de la vallée du Souss, séduit par ses remparts ocre et son ambiance authentique. Dans la médina, les souks sont vivants et très locaux : épices, cuir, artisanat, fruits et produits du terroir.
 
-Si vous aimez les paysages “carte postale” et une ambiance plus authentique, Tafraout est un incontournable du Sud.
-""", 'tiznit': """Tiznit est une ville au charme traditionnel, connue pour ses remparts et son artisanat, notamment l’orfèvrerie et le travail de l’argent. Flâner dans la médina et ses souks, c’est entrer dans un Maroc plus calme, plus local, où l’on prend le temps.
-
-C’est aussi un excellent point pour comprendre la culture du Souss : habitudes, produits, artisanat, et architecture. On y trouve des places animées, des ateliers, et des coins parfaits pour acheter un souvenir de qualité.
-
-En excursion, Tiznit se combine facilement avec la côte (Mirleft/Legzira) ou l’intérieur, selon vos envies.
-""", 'arches_igzira': """La côte de Legzira (près de Sidi Ifni / Mirleft) est célèbre pour ses falaises rouges et ses arches naturelles sculptées par l’océan. L’endroit est spectaculaire, surtout quand la lumière descend : le rouge des roches devient profond et le contraste avec l’Atlantique est magnifique.
+En fin d’après‑midi, la promenade le long des murailles et des portes historiques offre une lumière superbe pour les photos. C’est une excellente excursion depuis Agadir si vous cherchez culture, marché et détente, sans stress.""", 'arches_igzira': """La côte de Legzira (près de Sidi Ifni / Mirleft) est célèbre pour ses falaises rouges et ses arches naturelles sculptées par l’océan. L’endroit est spectaculaire, surtout quand la lumière descend : le rouge des roches devient profond et le contraste avec l’Atlantique est magnifique.
 
 La visite dépend beaucoup des marées : à marée basse, vous pouvez marcher plus loin sur le sable et approcher les formations rocheuses. C’est une sortie très “photo” et très “nature”, avec une sensation de grands espaces.
 
@@ -281,17 +280,11 @@ With a guided plan, everything becomes smoother (road, timing, best viewpoints).
 According to the time of year, you may see water spots and cooler corners, stop in small mountain cafés, and discover villages where life feels far from the coastal rhythm. It’s a great option if you want fresh air and a more rural side of Morocco.
 
 The beauty is as much in the panoramic drive as in the destination — the Souss backcountry often surprises visitors.
-""", 'tafraout': """Tafraout, in the heart of the Anti-Atlas, is famous for its pink granite mountains, rock formations, and Amazigh villages. The light here is special: at sunrise and sunset, the landscape turns warm and dramatic — perfect for photography.
+""", 'tafraout': """Tiznit / Tafraout combines two complementary sides of the South.
 
-You discover the area step by step: viewpoints, small villages, palm groves, and valleys such as the Ammeln Valley. Nearby, hidden gorges and oasis pockets reveal greenery in the middle of the rocks.
+Tiznit is known for its ramparts, medina, and craftsmanship (especially silver). Tafraout, in the Anti‑Atlas, brings pink‑granite mountains, Amazigh villages, and strong panoramic viewpoints. Together, it’s a great outing to mix local culture, shopping, and postcard landscapes.""", 'tiznit': """Taroudant, in the heart of the Souss Valley, is loved for its ochre ramparts and authentic medina atmosphere. Inside the walls, the souks feel truly local: spices, leather goods, crafts, fruit, and regional products.
 
-If you love postcard landscapes and a more authentic atmosphere, Tafraout is a must in Southern Morocco.
-""", 'tiznit': """Tiznit is a traditional town known for its ramparts and craftsmanship, especially silver jewelry and artisanal work. Walking through the medina and its souks feels calmer and more local — a place where people take their time.
-
-It is also a great way to understand Souss culture: daily life, products, crafts, and architecture. You’ll find lively squares, workshops, and excellent spots to buy a quality souvenir.
-
-Tiznit can easily be combined with the coast (Mirleft/Legzira) or the inland routes, depending on your interests.
-""", 'arches_igzira': """Legzira’s coastline (near Sidi Ifni / Mirleft) is famous for its red cliffs and natural sea arches shaped by the Atlantic. The scenery is dramatic, especially late in the day when the red rock becomes deeper and contrasts beautifully with the ocean.
+Late in the afternoon, walking along the historic walls and gates is especially beautiful for photos. It is an excellent day trip from Agadir if you want culture, markets, and a relaxed pace.""", 'arches_igzira': """Legzira’s coastline (near Sidi Ifni / Mirleft) is famous for its red cliffs and natural sea arches shaped by the Atlantic. The scenery is dramatic, especially late in the day when the red rock becomes deeper and contrasts beautifully with the ocean.
 
 The visit depends on the tide: at low tide you can walk farther on the sand and get closer to the rock formations. It’s a very “nature + photography” outing with a strong feeling of open space.
 
@@ -336,17 +329,11 @@ Mit guter Planung läuft alles ruhiger (Straße, Timing, beste Aussichtspunkte).
 Je nach Jahreszeit sehen Sie kühlere Ecken und Wasserstellen, können in kleinen Bergcafés pausieren und Dörfer entdecken, in denen das Leben ganz anders als an der Küste wirkt. Ideal, wenn Sie frische Luft und ein ländlicheres Marokko möchten.
 
 Der Reiz liegt sowohl in der Panoramafahrt als auch im Ziel — das Hinterland des Souss überrascht oft.
-""", 'tafraout': """Tafraout im Anti-Atlas ist berühmt für rosafarbenen Granit, besondere Felsformen und Amazigh-Dörfer. Das Licht ist einzigartig: Bei Sonnenauf- und -untergang wirken die Berge warm und dramatisch — perfekt für Fotos.
+""", 'tafraout': """Tiznit / Tafraout verbindet zwei sehr unterschiedliche, aber perfekt kombinierbare Seiten des Südens.
 
-Sie entdecken die Region Schritt für Schritt: Aussichtspunkte, kleine Dörfer, Palmenhaine und Täler wie das Ammeln-Tal. In der Nähe zeigen Schluchten und versteckte Oasen plötzlich Grün mitten im Fels.
+Tiznit ist bekannt für Stadtmauern, Medina und Handwerk (vor allem Silber). Tafraout im Anti‑Atlas bietet rosafarbenen Granit, Amazigh‑Dörfer und starke Panoramen. Zusammen ergibt das einen Ausflug mit Kultur, Einkaufsmöglichkeiten und Postkarten‑Landschaften.""", 'tiznit': """Taroudant im Souss‑Tal begeistert mit ockerfarbenen Stadtmauern und einer authentischen Medina. In den Souks geht es sehr lokal zu: Gewürze, Lederwaren, Handwerk, Obst und regionale Produkte.
 
-Wenn Sie Postkartenlandschaften und eine authentische Atmosphäre lieben, ist Tafraout ein Muss.
-""", 'tiznit': """Tiznit ist eine traditionelle Stadt, bekannt für ihre Stadtmauern und ihr Handwerk — vor allem Silberschmuck und Kunsthandwerk. Ein Spaziergang durch die Medina und die Souks wirkt ruhiger und lokaler: Hier nimmt man sich Zeit.
-
-Gleichzeitig ist es ein guter Ort, um die Kultur des Souss zu verstehen: Alltag, Produkte, Handwerk und Architektur. Sie finden Plätze, Werkstätten und sehr schöne Möglichkeiten für hochwertige Souvenirs.
-
-Tiznit lässt sich gut mit der Küste (Mirleft/Legzira) oder einer Route ins Inland kombinieren.
-""", 'arches_igzira': """Die Küste von Legzira (bei Sidi Ifni / Mirleft) ist berühmt für rote Klippen und natürliche Meeresbögen, die vom Atlantik geformt wurden. Die Szenerie ist spektakulär, besonders am späten Nachmittag, wenn das Rot der Felsen tiefer wird.
+Am späten Nachmittag ist der Spaziergang entlang der Mauern und Stadttore besonders fotogen. Als Tagesausflug ab Agadir ist Taroudant ideal, wenn Sie Kultur, Markt‑Atmosphäre und ein ruhiges Tempo suchen.""", 'arches_igzira': """Die Küste von Legzira (bei Sidi Ifni / Mirleft) ist berühmt für rote Klippen und natürliche Meeresbögen, die vom Atlantik geformt wurden. Die Szenerie ist spektakulär, besonders am späten Nachmittag, wenn das Rot der Felsen tiefer wird.
 
 Der Besuch hängt von den Gezeiten ab: Bei Ebbe können Sie weiter am Strand entlanggehen und näher an die Felsformationen kommen. Es ist ein perfekter Ausflug für Natur und Fotografie, mit viel Weite.
 
@@ -464,7 +451,7 @@ def get_regions():
         imgs = list_images(abs_reg)
         regions.append({
             "slug": slug,
-            "name": slug.replace("_", " ").title(),
+            "name": DISPLAY_NAME.get(slug, slug.replace("_", " ").title()),
             "cover": imgs[0] if imgs else None,
             "count": len(imgs),
             "text": REGION_TEXTS.get(lang, REGION_TEXTS["fr"]).get(slug, REGION_TEXTS["fr"].get(slug, "Mini texte à ajouter.")),
