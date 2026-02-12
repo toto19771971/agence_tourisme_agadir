@@ -36,7 +36,6 @@ a:hover{ color: inherit; }
   width:100%;
   height:100%;
   object-fit: cover;
-  /* pas de filtre = pas d’assombrissement / pas de perte de netteté */
   transform: scale(1.02);
 }
 
@@ -169,7 +168,7 @@ a:hover{ color: inherit; }
   color: var(--muted);
 }
 
-/* bande photos horizontale (anti-scroll vertical) */
+/* bande photos horizontale */
 .hscroll{
   display:flex;
   gap: 10px;
@@ -202,7 +201,7 @@ a:hover{ color: inherit; }
 }
 .hscroll-item:hover img{ transform: scale(1.06); }
 
-/* Région: photos plus grandes */
+/* Région: colonnes */
 .region-masonry{
   column-count: 3;
   column-gap: 14px;
@@ -214,9 +213,7 @@ a:hover{ color: inherit; }
   .region-masonry{ column-count: 1; }
 }
 
-
-
-/* Home: 11 régions en grille (pas de trous / pas d’espace vide) */
+/* Home: ancienne grille (laissée, mais Home n’utilise plus masonry-item) */
 .home-masonry{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -247,8 +244,7 @@ a:hover{ color: inherit; }
   .hero-map{ width:96px; height:64px; }
 }
 
-
-/* Panels / formulaires (plus visibles) */
+/* Panels / formulaires */
 .panel{
   background: rgba(255,255,255,.82);
   border: 2px solid rgba(15,23,42,.14);
@@ -277,8 +273,7 @@ a:hover{ color: inherit; }
   border-color: #ff6b6b;
 }
 
-
-/* HERO = 2 cartes plein cadre */
+/* HERO = 2 cartes */
 .hero-maps-only{
   min-height: unset;
   height: 240px;
@@ -310,19 +305,6 @@ a:hover{ color: inherit; }
   .hero-map-big{ height:200px; }
 }
 
-
-/* Drapeaux (même hauteur que le logo, largeur moitié) */
-.flag-img{
-  height: 50px;
-  width: 100px;
-  border-radius: 10px;
-  border: 2px solid rgba(15,23,42,.18);
-  object-fit: cover;
-  display:block;
-}
-.flag-link{ display:block; }
-
-
 .brand-stack{
   display:flex;
   flex-direction:column;
@@ -342,4 +324,147 @@ a:hover{ color: inherit; }
   font-size:20px;
   color:#0f172a;
   line-height:1;
+}
+
+/* =========================
+   CORRECTION REGIONS : vides entre photo et cadre
+   Effet visuel : toutes les photos de région ont la même hauteur,
+   donc plus de "cadres" plus grands que l'image.
+   ========================= */
+.region-masonry .masonry-item img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 576px){
+  .region-masonry .masonry-item img{ height: 200px; }
+}
+
+/* =========================
+   DRAPEAUX : toujours visibles (même sur mobile)
+   Effet visuel : petits drapeaux propres à droite du logo,
+   sans être cachés par un menu.
+   ========================= */
+.lang-flags{ flex-wrap: nowrap; }
+.flag-btn{
+  border: 0;
+  background: transparent;
+  padding: 0;
+  line-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.flag-img{
+  height: 36px;
+  width: 58px;
+  border-radius: 10px;
+  border: 2px solid rgba(15,23,42,.18);
+  object-fit: cover;
+  display:block;
+}
+@media (max-width: 576px){
+  .flag-img{
+    height: 28px;
+    width: 46px;
+    border-radius: 9px;
+  }
+}
+
+/* =========================
+   HOME UNIQUEMENT : cartes modernes
+   Effet visuel :
+   - 2 colonnes sur ordinateur
+   - 1 colonne sur mobile
+   - zoom doux + voile sombre + titre en bas
+   ========================= */
+.home-grid{
+  display:grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 992px){
+  .home-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.home-card{
+  position: relative;
+  display:block;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 10px 22px rgba(15,23,42,.08);
+  transform: translateZ(0);
+  transition: transform .22s ease, box-shadow .22s ease;
+  min-height: 210px;
+}
+
+.home-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(15,23,42,.14);
+}
+
+.home-card-carousel,
+.home-card-carousel .carousel-inner,
+.home-card-carousel .carousel-item{
+  height: 100%;
+}
+
+.home-card-img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform .45s ease;
+  display:block;
+}
+@media (max-width: 576px){
+  .home-card-img{ height: 200px; }
+}
+
+.home-card:hover .home-card-img{
+  transform: scale(1.06);
+}
+
+.home-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(15,23,42,0) 35%, rgba(15,23,42,.55) 100%);
+  opacity: .95;
+  pointer-events:none;
+}
+
+.home-card-overlay{
+  position:absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.35);
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 10px;
+}
+
+.home-card-title{
+  font-weight: 950;
+  letter-spacing: .2px;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.home-card-meta{
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
 }

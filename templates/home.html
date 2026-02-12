@@ -28,31 +28,27 @@
 
 <div class="section-title mb-3">{{ tr('home_title') }}</div>
 
-<div class="home-masonry">
+<div class="home-grid">
   {% for r in regions %}
-    <a href="{{ url_for('region', slug=r.slug) }}" class="masonry-item d-block">
+    <a href="{{ url_for('region', slug=r.slug) }}" class="home-card">
       {% if r.carousel and r.carousel|length > 0 %}
-        <div id="car-{{ r.slug }}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1800">
+        <div id="car-{{ r.slug }}" class="carousel slide home-card-carousel" data-bs-ride="carousel" data-bs-interval="1800" data-bs-pause="false">
           <div class="carousel-inner">
             {% for url in r.carousel %}
               <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
-                <img src="{{ url }}" class="d-block w-100" style="height:200px; object-fit:cover;" alt="{{ r.name }}">
+                <img src="{{ url }}" class="d-block w-100 home-card-img" alt="{{ r.name }}" loading="lazy">
               </div>
             {% endfor %}
           </div>
         </div>
       {% endif %}
-      <div class="masonry-label">{{ r.name }} · {{ r.count }} photos</div>
+
+      <div class="home-card-overlay">
+        <div class="home-card-title">{{ r.name }}</div>
+        <div class="home-card-meta">{{ r.count }} photos</div>
+      </div>
     </a>
   {% endfor %}
-
-  <!-- carte 2 = tuile pour meubler -->
-  {% if cartes_urls and cartes_urls|length >= 2 %}
-    <div class="masonry-item d-block">
-      <img src="{{ cartes_urls[1] }}" alt="Carte 2" style="width:100%; height:200px; object-fit:cover;">
-      <div class="masonry-label">Carte</div>
-    </div>
-  {% endif %}
 </div>
 
 <!-- CTA en bas à droite -->
